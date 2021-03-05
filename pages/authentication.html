@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/authentication.css" />
     <title>Jokes authentication page</title>
   </head>
   <body class="jokes">
     <section class="jokes__authentication">
       <div class="authentication__image">
-        <img src="../assets/images/authentication-image.png" alt="Auth image" />
+        <img
+          class="image__drawing"
+          src="../assets/images/authentication-image.png"
+          alt="Auth image"
+        />
       </div>
       <div class="authentication__box">
         <div class="box__registration">
@@ -20,22 +26,29 @@
             >
           </p>
           <form action="" method="post" class="registration__form">
+            <label for="registration-name" class="form__label">Your name</label>
             <input
               type="text"
               name="registration-name"
-              class="form__name"
+              class="form__input"
               placeholder="Full Name"
             />
+            <label for="registration-password" class="form__label"
+              >Your password</label
+            >
             <input
               type="text"
               name="registration-password"
-              class="form__password"
+              class="form__input"
               placeholder="Choose something secure"
             />
+            <label for="registration-repeat-password" class="form__label"
+              >Repeat your password</label
+            >
             <input
               type="text"
               name="registration-repeat-password"
-              class="form__repeat-password"
+              class="form__input"
               placeholder="Repeat password"
             />
             <button class="form__submit">Create free account</button>
@@ -43,17 +56,27 @@
         </div>
         <div class="box__login">
           <h2 class="login__title">Login</h2>
+          <p class="registration__help">
+            You don't have an account?<a href="#" class="help__sign-up"
+              >Sign up here</a
+            >
+          </p>
+
           <form action="" method="post" class="login__form">
+            <label for="login-name" class="form__label">Your name</label>
             <input
               type="text"
               name="login-name"
-              class="form__name"
+              class="form__input"
               placeholder="Full name"
             />
+            <label for="login-password" class="form__label"
+              >Your password</label
+            >
             <input
               type="text"
               name="login-password"
-              class="form__password"
+              class="form__input"
               placeholder="Password"
             />
             <button class="form__submit">Login</button>
