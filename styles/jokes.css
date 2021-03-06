@@ -1,0 +1,157 @@
+.card__image {
+  display: none;
+}
+
+.card__box {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.box__application {
+  margin: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.application__title,
+.rang-list__title {
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+
+.application__fetch {
+  border: #0f0f0f dashed 1px;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fetch__add-new {
+  height: 50px;
+  width: 150px;
+  border-radius: 100px;
+  background-color: #808080;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+}
+
+.fetch__joke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*display: none;*/
+}
+
+.joke__title {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: 800;
+}
+
+.joke__content {
+  font-style: italic;
+  font-size: large;
+  margin-bottom: 100px;
+}
+
+.joke__content::before {
+  content: open-quote;
+}
+
+.joke__content::after {
+  content: close-quote;
+}
+
+.joke__rater {
+  border: #808080 solid 1px;
+  height: 40px;
+  border-radius: 100px;
+  display: flex;
+  overflow: hidden;
+}
+
+.rater__save {
+  color: #008000;
+  padding: 20px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.rater__save:hover {
+  background-color: #008000;
+  color: #fff;
+}
+
+.rater__skip {
+  color: #f00;
+  padding: 20px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.rater__skip:hover {
+  background-color: #f00;
+  color: #fff;
+}
+
+.rater__rating {
+  width: 100px;
+  text-align: center;
+}
+
+.box__rang-list {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.jokes__joke {
+  font-size: 20px;
+  margin: 2px;
+}
+
+@media screen and (min-width: 1440px) {
+  .jokes__card {
+    align-self: center;
+    max-width: 1120px;
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card__image {
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+  }
+
+  .card__box {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .box__application {
+    margin-top: 50px;
+  }
+
+  .box__rang-list {
+    margin-top: 50px;
+  }
+}
