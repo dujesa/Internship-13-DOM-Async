@@ -63,7 +63,6 @@
               placeholder="Repeat password"
               required
               onkeyup="validatePasswords();"
-
             />
             <button class="form__submit">Create free account</button>
           </form>
@@ -76,7 +75,12 @@
             >
           </p>
 
-          <form action="" method="post" class="login__form">
+          <form
+            action="javascript:void(0)"
+            method="post"
+            class="login__form"
+            onsubmit="loginSubmitHandler(this)"
+          >
             <label for="login-name" class="form__label">Your name</label>
             <input
               type="text"
@@ -101,6 +105,9 @@
       </div>
     </section>
     <script src="/scripts/authentications/registration.js"></script>
+    <script src="/scripts/displays.js"></script>
+    <script src="/scripts/authentications/login.js"></script>
     <script src="/scripts/eventListeners.js"></script>
+    <script src="/scripts/events.js"></script>
   </body>
 </html>

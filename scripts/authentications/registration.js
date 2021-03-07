@@ -13,4 +13,6 @@ function registrationSubmitHandler(form) {
 
   localStorage.setItem("fullname", fullname.value);
   localStorage.setItem("password", password.value);
+
+  displayAuthenticationBox();
 }
