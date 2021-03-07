@@ -22,7 +22,7 @@
           <h2 class="application__title">Jokes rater</h2>
           <div class="application__fetch">
             <div class="fetch__add-new">+ Fetch new</div>
-            <div action="" class="fetch__joke">
+            <div action="" class="fetch__joke fetch--hidden">
               <h2 class="joke__title">Joke title</h2>
               <div class="joke__content">Joke content</div>
               <form class="joke__rater" action="javascript:void(0)">
@@ -32,6 +32,9 @@
                   class="rater__rating"
                   type="text"
                   placeholder="Rating"
+                  required
+                  min="1"
+                  max="10"
                 />
                 <a class="rater__skip">Skip</a>
               </form>

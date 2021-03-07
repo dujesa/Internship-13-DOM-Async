@@ -25,13 +25,21 @@
               >Sign in here</a
             >
           </p>
-          <form action="" method="post" class="registration__form">
+          <form
+            action="javascript:void(0)"
+            method="post"
+            class="registration__form"
+            onsubmit="registrationSubmitHandler(this)"
+          >
             <label for="registration-name" class="form__label">Your name</label>
             <input
               type="text"
               name="registration-name"
               class="form__input"
               placeholder="Full Name"
+              required
+              minlength="5"
+              maxlength="10"
             />
             <label for="registration-password" class="form__label"
               >Your password</label
@@ -41,15 +49,21 @@
               name="registration-password"
               class="form__input"
               placeholder="Choose something secure"
+              required
+              minlength="5"
+              maxlength="15"
             />
             <label for="registration-repeat-password" class="form__label"
               >Repeat your password</label
             >
             <input
               type="text"
-              name="registration-repeat-password"
+              name="registration-repeated-password"
               class="form__input"
               placeholder="Repeat password"
+              required
+              onkeyup="validatePasswords();"
+
             />
             <button class="form__submit">Create free account</button>
           </form>
@@ -69,6 +83,7 @@
               name="login-name"
               class="form__input"
               placeholder="Full name"
+              required
             />
             <label for="login-password" class="form__label"
               >Your password</label
@@ -78,11 +93,14 @@
               name="login-password"
               class="form__input"
               placeholder="Password"
+              required
             />
             <button class="form__submit">Login</button>
           </form>
         </div>
       </div>
     </section>
+    <script src="/scripts/authentications/registration.js"></script>
+    <script src="/scripts/eventListeners.js"></script>
   </body>
 </html>
