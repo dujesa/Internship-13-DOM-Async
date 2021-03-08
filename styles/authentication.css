@@ -41,10 +41,11 @@
   border-radius: 100px;
   padding: 10px;
   font-size: small;
+  border: 1px solid #808080;
 }
 
-input:valid {
-  border: 1px solid green;
+.form__input:valid {
+  border-color: green;
 }
 
 .form__submit {
@@ -60,8 +61,20 @@ input:valid {
   cursor: pointer;
 }
 
+.box__registration,
+.box__login {
+  width: 90%;
+}
+
 .box__login {
   display: none;
+}
+
+.form__label--login-name::after,
+.form__label--login-password::after {
+  content: attr(data-content);
+  color: red;
+  font-weight: normal;
 }
 
 @media screen and (min-width: 768px) {

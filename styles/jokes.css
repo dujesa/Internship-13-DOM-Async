@@ -1,3 +1,33 @@
+.jokes__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 5vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgb(250, 196, 33);
+}
+
+.navigation__logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  width: 100px;
+  background-color: rgb(250, 196, 33);
+  color: #808080;
+  text-decoration: none;
+  font-size: small;
+  font-weight: 700;
+}
+
+.navigation__logout:hover {
+  color: black;
+  background-color: #fed149;
+}
+
 .card__image {
   display: none;
 }
@@ -122,8 +152,8 @@
 }
 
 .fetch--hidden {
-    /*opacity: 0;*/
-    display: none;
+  /*opacity: 0;*/
+  display: none;
 }
 
 @media screen and (min-width: 1440px) {

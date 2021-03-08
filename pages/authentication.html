@@ -81,7 +81,12 @@
             class="login__form"
             onsubmit="loginSubmitHandler(this)"
           >
-            <label for="login-name" class="form__label">Your name</label>
+            <label
+              for="login-name"
+              class="form__label form__label--login-name"
+              data-content=""
+              >Your name</label
+            >
             <input
               type="text"
               name="login-name"
@@ -89,7 +94,10 @@
               placeholder="Full name"
               required
             />
-            <label for="login-password" class="form__label"
+            <label
+              for="login-password"
+              class="form__label form__label--login-password"
+              data-content=""
               >Your password</label
             >
             <input

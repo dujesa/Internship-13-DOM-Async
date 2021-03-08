@@ -14,12 +14,14 @@ body {
 
 .jokes {
   background-color: #fed149;
-  height: 100vh;
+  height: 95vh;
   display: flex;
+  flex-direction: column;
 }
 
 .jokes__card {
   margin: auto;
+  width: 300px;
   max-width: 300px;
 }
 
