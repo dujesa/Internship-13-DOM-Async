@@ -20,12 +20,6 @@ const jokeRaterSubmitHandler = function (form) {
   const ratingInput = form.querySelector("input[name='joke-rating']");
   const contentBox = document.querySelector(".joke__content");
 
-  const newJoke = {
-    id: idInput.value,
-    content: contentInput.value,
-    rating: ratingInput.value,
-  };
-
   let savedJokes = JSON.parse(localStorage.getItem("savedJokes"));
   savedJokes.push({
     id: idInput.value,

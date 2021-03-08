@@ -10,6 +10,33 @@
   background-color: rgb(250, 196, 33);
 }
 
+.jokes__confirmation-popup {
+  position: absolute;
+  width: calc(100vw - 60vw);
+  height: calc(100vh - 60vh);
+  top: 30vh;
+  left: 30vw;
+  background-color: grey;
+  padding: 10px;
+  border: 1px solid black;
+  display: none;
+}
+
+.confirmation-popup__question {
+  text-align: center;
+}
+
+.confirmation-popup__answers {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10vh;
+}
+
+.answers__yes,
+.answers__no {
+  cursor: pointer;
+}
+
 .navigation__logout {
   display: flex;
   align-items: center;
