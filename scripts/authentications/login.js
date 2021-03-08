@@ -26,5 +26,5 @@ function loginSubmitHandler(form) {
   }
 
   localStorage.setItem("isAuthenticated", true);
-  window.location.href = "http://127.0.0.1:5500/pages/jokes.html";
+  window.location.href = jokesUrl;
 }

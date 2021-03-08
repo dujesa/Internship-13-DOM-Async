@@ -11,6 +11,12 @@ function displayAuthenticationBox() {
   }
 }
 
-function displayApplicationBox() {
+function displayJoke(joke) {
+  const jokeBox = document.querySelector(".joke__content");
+  const jokeInput = document.querySelector("input[name='joke-content']");
 
+  if (!!joke.joke) {
+    jokeBox.innerHTML = joke.joke;
+    jokeInput.value = joke.joke;
+  }
 }

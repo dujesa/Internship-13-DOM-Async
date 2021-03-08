@@ -9,7 +9,11 @@
     <title>Jokes application</title>
   </head>
   <body class="jokes">
-    <nav class="jokes__navigation"><a href="#" class="navigation__logout" onclick="logoutClickHandler()">Logout</a></nav>
+    <nav class="jokes__navigation">
+      <a href="#" class="navigation__logout" onclick="logoutClickHandler()"
+        >Logout</a
+      >
+    </nav>
     <section class="jokes__card">
       <div class="card__image">
         <img
@@ -22,9 +26,13 @@
         <div class="box__application">
           <h2 class="application__title">Jokes rater</h2>
           <div class="application__fetch">
-            <a class="fetch__add-new" onclick="fetchNewJokeClickHandler()">+ Fetch new</a>
+            <a class="fetch__add-new" onclick="fetchNewJokeClickHandler()"
+              >+ Fetch new</a
+            >
             <div class="fetch__joke fetch--hidden">
-              <div class="joke__cancel" onclick="fetchNewJokeClickHandler()">X</div>
+              <div class="joke__cancel" onclick="fetchNewJokeClickHandler()">
+                X
+              </div>
               <h2 class="joke__title">Joke title</h2>
               <div class="joke__content">Joke content</div>
               <form class="joke__rater" action="javascript:void(0)">
@@ -38,7 +46,8 @@
                   min="1"
                   max="10"
                 />
-                <a class="rater__skip">Skip</a>
+                <input name="joke-content" type="hidden" value="" />
+                <a class="rater__skip" onclick="skipJokeClickHandler()">Skip</a>
               </form>
             </div>
           </div>
@@ -75,7 +84,11 @@
         </div>
       </div>
     </section>
+    <script src="/scripts/constants/apiConstants.js"></script>
+    <script src="/scripts/constants/applicationConstants.js"></script>
     <script src="/scripts/authentications/logout.js"></script>
+    <script src="/scripts/apis/fetchJoke.js"></script>
+    <script src="/scripts/displays.js"></script>
     <script src="/scripts/eventListeners.js"></script>
   </body>
 </html>

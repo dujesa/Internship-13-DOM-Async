@@ -14,17 +14,25 @@ const validatePasswords = function () {
   }
 };
 
-const fetchNewJokeClickHandler = function () {
+const fetchNewJokeClickHandler = async function () {
   const fetchNewElement = document.querySelector(".fetch__add-new");
   const fetchJokeElement = document.querySelector(".fetch__joke");
 
-  const isNewElementHidden = fetchNewElement.classList.contains("fetch--hidden");
+  const isJokeBoxActive = !fetchJokeElement.classList.contains("fetch--hidden");
 
-  if (isNewElementHidden) {
+  if (isJokeBoxActive) {
     fetchNewElement.classList.remove("fetch--hidden");
     fetchJokeElement.classList.add("fetch--hidden");
   } else {
     fetchNewElement.classList.add("fetch--hidden");
     fetchJokeElement.classList.remove("fetch--hidden");
+
+    const newJoke = await fetchJoke();
+    displayJoke(newJoke);
   }
+};
+
+const skipJokeClickHandler = async function () {
+  const newJoke = await fetchJoke();
+  displayJoke(newJoke);
 };
