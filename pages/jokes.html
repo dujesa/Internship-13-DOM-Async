@@ -33,9 +33,13 @@
               <div class="joke__cancel" onclick="fetchNewJokeClickHandler()">
                 X
               </div>
-              <h2 class="joke__title">Joke title</h2>
+              <h2 class="joke__title">New joke</h2>
               <div class="joke__content">Joke content</div>
-              <form class="joke__rater" action="javascript:void(0)">
+              <form
+                class="joke__rater"
+                action="javascript:void(0)"
+                onsubmit="jokeRaterSubmitHandler(this)"
+              >
                 <button class="rater__save">Save</button>
                 <input
                   name="joke-rating"
@@ -46,6 +50,7 @@
                   min="1"
                   max="10"
                 />
+                <input name="joke-id" type="hidden" value="" />
                 <input name="joke-content" type="hidden" value="" />
                 <a class="rater__skip" onclick="skipJokeClickHandler()">Skip</a>
               </form>
@@ -54,33 +59,7 @@
         </div>
         <div class="box__rang-list">
           <h2 class="rang-list__title">Jokes rang list</h2>
-          <div class="rang-list__jokes">
-            <div class="jokes__joke">
-              <span class="joke__ranking">1.</span>
-              <span class="joke__caption">Joke title a</span>:
-              <span class="joke__rating">4.99</span>
-            </div>
-            <div class="jokes__joke">
-              <span class="joke__ranking">2.</span>
-              <span class="joke__caption">Joke title b</span>:
-              <span class="joke__rating">4.12</span>
-            </div>
-            <div class="jokes__joke">
-              <span class="joke__ranking">3.</span>
-              <span class="joke__caption">Joke title c</span>:
-              <span class="joke__rating">4.00</span>
-            </div>
-            <div class="jokes__joke">
-              <span class="joke__ranking">4.</span>
-              <span class="joke__caption">Joke title d</span>:
-              <span class="joke__rating">3.39</span>
-            </div>
-            <div class="jokes__joke">
-              <span class="joke__ranking">5.</span>
-              <span class="joke__caption">Joke title e</span>:
-              <span class="joke__rating">2.34</span>
-            </div>
-          </div>
+          <div class="rang-list__jokes"></div>
         </div>
       </div>
     </section>
@@ -90,5 +69,6 @@
     <script src="/scripts/apis/fetchJoke.js"></script>
     <script src="/scripts/displays.js"></script>
     <script src="/scripts/eventListeners.js"></script>
+    <script src="/scripts/events/jokesEvents.js"></script>
   </body>
 </html>

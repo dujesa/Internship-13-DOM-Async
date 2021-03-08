@@ -13,6 +13,7 @@ function registrationSubmitHandler(form) {
 
   localStorage.setItem("fullname", fullname.value);
   localStorage.setItem("password", password.value);
+  localStorage.setItem("savedJokes", JSON.stringify([]));
 
   displayAuthenticationBox();
 }

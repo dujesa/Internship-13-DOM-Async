@@ -14,22 +14,53 @@ const validatePasswords = function () {
   }
 };
 
+const jokeRaterSubmitHandler = function (form) {
+  const idInput = form.querySelector("input[name='joke-id']");
+  const contentInput = form.querySelector("input[name='joke-content']");
+  const ratingInput = form.querySelector("input[name='joke-rating']");
+  const contentBox = document.querySelector(".joke__content");
+
+  const newJoke = {
+    id: idInput.value,
+    content: contentInput.value,
+    rating: ratingInput.value,
+  };
+
+  let savedJokes = JSON.parse(localStorage.getItem("savedJokes"));
+  savedJokes.push({
+    id: idInput.value,
+    content: contentInput.value,
+    rating: ratingInput.value,
+  });
+
+  savedJokes.sort((jokeA, jokeB) => jokeB.rating - jokeA.rating);
+
+  localStorage.setItem("savedJokes", JSON.stringify(savedJokes));
+
+  ratingInput.value = "";
+  contentBox.innerHTML = "";
+
+  displayRater();
+  displayRangList();
+};
+
+const deleteJokeHandler = function (event) {
+  const savedJokes = JSON.parse(localStorage.getItem("savedJokes"));
+  const jokeId = event.parentElement.querySelector(".joke__id").innerHTML;
+  const deletingJokeIndex = savedJokes.findIndex((joke) => joke.id === jokeId);
+
+  savedJokes.splice(deletingJokeIndex, 1);
+
+  localStorage.setItem("savedJokes", JSON.stringify(savedJokes));
+
+  displayRangList();
+};
+
 const fetchNewJokeClickHandler = async function () {
-  const fetchNewElement = document.querySelector(".fetch__add-new");
-  const fetchJokeElement = document.querySelector(".fetch__joke");
+  displayRater();
 
-  const isJokeBoxActive = !fetchJokeElement.classList.contains("fetch--hidden");
-
-  if (isJokeBoxActive) {
-    fetchNewElement.classList.remove("fetch--hidden");
-    fetchJokeElement.classList.add("fetch--hidden");
-  } else {
-    fetchNewElement.classList.add("fetch--hidden");
-    fetchJokeElement.classList.remove("fetch--hidden");
-
-    const newJoke = await fetchJoke();
-    displayJoke(newJoke);
-  }
+  const newJoke = await fetchJoke();
+  displayJoke(newJoke);
 };
 
 const skipJokeClickHandler = async function () {
